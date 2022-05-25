@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Recados</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <section id="secaoImagem"></section>
+      <section id="secaoLogin">
+        <form action="" class="displayCol efeitoVidro" id="formularioLogin">
+          <h1>Sistema de Recados</h1>
+          <img src="./image/user.png" alt="profile" id="profile" />
+          <div id="email" class="displayRow">
+            <p><img src="./image/email.png" alt="email" id="iconEmail" /></p>
+            <input
+              type="email"
+              name="email"
+              id="inputEmail"
+              placeholder="Digite seu e-mail"
+              required
+            />
+          </div>
+          <div id="senha" class="displayRow">
+            <p><img src="./image/key.png" alt="senha" id="iconSenha" /></p>
+            <input
+              type="password"
+              name="senha"
+              id="inputSenha"
+              placeholder="Digite sua senha"
+              required
+            />
+          </div>
+          <button type="submit" id="botaoLogin">Login</button>
+          <a id="linkCriarConta" href="./cadastroDeusuario.html"
+            >Criar nova conta</a
+          >
+        </form>
+      </section>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

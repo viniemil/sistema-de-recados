@@ -1,0 +1,145 @@
+*,
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(#f6f7fc 70%, #6d81fe);
+}
+
+#botaoSair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  width: 40px;
+  cursor: pointer;
+}
+
+#informacoesRecado {
+  align-items: center;
+  padding: 10px;
+}
+
+h2 {
+  text-align: left;
+  margin: 10px;
+  font-family: "Righteous", cursive;
+}
+
+.flexContainerColumn {
+  display: flex;
+  flex-direction: column;
+}
+.flexContainerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input#titulo,
+input#descricao {
+  height: 30px;
+  margin: 10px;
+  border: 1px solid #696767;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+input#titulo {
+  width: 30%;
+}
+input#descricao {
+  width: 60%;
+}
+
+input#botaoCadastrar {
+  height: 43px;
+  width: 5%;
+  align-content: center;
+  padding: 0 10px 0 10px;
+  border: none;
+  border-radius: 15%;
+  background-color: #1797c5;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+table {
+  align-content: center;
+  width: 98%;
+  margin: 0 auto 0 auto;
+  padding: 20px;
+  border-collapse: collapse;
+  font-family: "Righteous", cursive;
+}
+
+th {
+  padding: 15px 0 15px 0;
+  background-color: #ffffff;
+}
+
+.celulaId {
+  width: 5vw;
+  padding: 15px;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  border-radius: 10px 0 0 10px;
+}
+
+.celulaTitulo {
+  width: 30vw;
+  padding: 15px;
+  text-align: left;
+  max-width: 30vw;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.celulaDescricao {
+  width: 50vw;
+  padding: 15px;
+  text-align: left;
+  max-width: 50vw;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.celulaBotao {
+  width: 15vw;
+  padding: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  border-radius: 0 10px 10px 0;
+}
+
+.botaoEditar,
+.botaoApagar {
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10%;
+  color: white;
+  cursor: pointer;
+}
+
+.botaoEditar {
+  background-color: #1797c5;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.botaoApagar {
+  background-color: #93e0ee;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}

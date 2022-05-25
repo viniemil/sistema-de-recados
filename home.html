@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste</title>
+    <link rel="stylesheet" href="./home.css" />
+  </head>
+
+  <body>
+    <img src="./image/sair (1).png" id="botaoSair" alt="">
+    <form action="" id="informacoesRecado">
+      <h2>MEUS RECADOS</h2>
+      <div class="flexContainerRow">
+        
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          placeholder="Digite a descrição do seu recado...
+          "
+          required
+        />      
+        
+        <input type="text" name="descricao" id="descricao" placeholder="Detalhe o seu recado..." required>       
+        
+        <input name="botaoCadastrar" id="botaoCadastrar" type="submit" value="Salvar" />
+        
+      </div>
+      
+    </form>
+
+    <br /><br />
+
+
+  <table>
+    <thead>
+      <tr>
+        <th class="celulaId">#</th>
+        <th class="celulaTitulo">DESCRIÇÃO</th>
+        <th class="celulaDescricao">DETALHAMENTO</th>
+        <th class="celulaBotao">AÇÕES</th>
+      </tr>
+    </thead>
+
+    <tbody id="tbody" >
+      
+    </tbody>    
+
+
+    <script src="./home.js"></script>
+  </body>
+</html>
+

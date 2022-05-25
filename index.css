@@ -1,0 +1,136 @@
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+  height: 100vh;
+}
+
+.efeitoVidro {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(131111.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.034);
+}
+
+.displayCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+  border-radius: 50px 0 50px 0;
+}
+
+.displayRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#secaoImagem {
+  width: 70%;
+  padding: 10px;
+  background-image: url(./image/bg-02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#secaoLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  padding: 10px;
+  background-color: #f6f7fc;
+}
+
+#secaoLogin form h1 {
+  font-family: "Righteous", cursive;
+  margin: 30px;
+  color: #23314c;
+}
+
+#profile {
+  width: 150px;
+}
+
+#iconEmail,
+#iconSenha,
+#iconUsuario {
+  width: 30px;
+  margin: 4px 5px 0 0;
+}
+
+#email,
+#senha,
+#nomeUsuario,
+#confirmaSenha {
+  margin: 10px 0 0 0;
+  transform: translate(-15px);
+}
+
+#inputEmail,
+#inputSenha,
+#inputUsuario,
+#inputConfirmaSenha {
+  padding-left: 5px;
+  background: none;
+  border-bottom: 5px solid #cddce6 outset;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #23314c;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #23314c inset;
+  -webkit-text-fill-color: white !important;
+}
+
+input::placeholder {
+  padding-left: 5px;
+  color: #23314c;
+}
+
+#botaoLogin {
+  padding: 15px;
+  width: 40%;
+  margin: 30px 0 10px 0;
+  border-radius: 20px;
+  border: none;
+  background-color: #6d81fe;
+  font-family: "Righteous", cursive;
+  color: #23314c;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#botaoLogin:hover {
+  background-color: #23314c;
+  color: #f6f7fc;
+  transition: 1s;
+}
+
+form > a {
+  color: #666666;
+  font-size: small;
+}
+
+form > a:hover {
+  color: #6d81fe;
+  transition: 1s;
+}
