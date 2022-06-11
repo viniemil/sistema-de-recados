@@ -1,41 +1,46 @@
-formularioCadastro.setAttribute("autocomplete", "off");
+const form = document.querySelector("formularioCadastro");
 
-const nomeUsuario = document.getElementById("inputUsuario");
-const emailusuario = document.getElementById("inputEmail");
-const senhaUsuario = document.getElementById("inputSenha");
-const confirmaSenha = document.getElementById("inputConfirmaSenha");
+form.setAttribute("autocomplete", "off");
+form.addEventListener("submit", criarUsuario);
 
-const botaoCriar = document.querySelector("#botaoCriar");
+function buscaUsuarios() {
+  const localStorageUsuarios = JSON.parse(localStorage.getItem("usuarios"));
+  let usuarios = localStorageUsuarios ?? [];
 
-botaoCriar.addEventListener("click", criarUsuario);
+  return usuarios;
+}
 
 function criarUsuario(event) {
   event.preventDefault();
-  const localStorageUsuarios = JSON.parse(localStorage.getItem("usuarios"));
-  let usuarios = localStorageUsuarios !== null ? localStorageUsuarios : [];
 
-  const verificaUsuario = usuarios.find(
-    (usuario) => usuario.email == emailusuario.value
-  );
-  if (verificaUsuario != undefined) {
+  const usuarios = buscaUsuarios();
+
+  const nome = form.usuario.value;
+  const email = form.email.value;
+  const senha = form.senha.value;
+  const confirmaSenha = form.confirmaSenha.value;
+
+  const usuarioExiste = usuarios.some((usuario) => usuario.email == email);
+  if (usuarioExiste) {
     alert(
       "E-mail já cadastrado!\nUtilize outro e-mail para completar seu cadastro."
     );
     return;
   }
 
-  if (senhaUsuario.value == confirmaSenha.value) {
-    usuarios.push({
-      nome: nomeUsuario.value,
-      email: emailusuario.value,
-      senha: senhaUsuario.value,
-    });
-
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-    window.location.href = "./index.html";
-    alert("Usuário criado com sucesso!\nEfetue seu login.");
-  } else {
+  if (senha != confirmaSenha) {
     alert("As senhas não coincidem.");
+    return;
   }
+
+  usuarios.push({
+    nome,
+    email,
+    senha,
+  });
+
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  window.location.href = "./index.html";
+  alert("Usuário criado com sucesso!\nEfetue seu login.");
 }

@@ -1,24 +1,32 @@
-const nomeUsuario = document.getElementById("inputUsuario");
-const emailUsuario = document.getElementById("inputEmail");
-const senhaUsuario = document.getElementById("inputSenha");
+const form = document.querySelector("#formularioLogin");
 
-const localStorageUsuarios = JSON.parse(localStorage.getItem("usuarios"));
-let usuarios = localStorageUsuarios !== null ? localStorageUsuarios : [];
+function buscaUsuarios() {
+  const localStorageUsuarios = JSON.parse(localStorage.getItem("usuarios"));
+  let usuarios = localStorageUsuarios ?? [];
+
+  return usuarios;
+}
 
 function logar(event) {
   event.preventDefault();
-  const verificaUsuario = usuarios.find(
-    (usuario) =>
-      usuario.email == emailUsuario.value && usuario.senha == senhaUsuario.value
+
+  const usuarios = buscaUsuarios;
+
+  const email = form.email.value;
+  const senha = form.senha.value;
+
+  const usuarioEncontrado = usuarios.find(
+    (usuario) => usuario.email == email && usuario.senha == senha
   );
-  localStorage.setItem("usuariologado", JSON.stringify(verificaUsuario));
-  if (verificaUsuario != undefined) {
-    console.log(usuarios.nome);
-    window.location.href = "./home.html";
-  } else {
+
+  if (!usuarioEncontrado) {
     alert("Usuário ou senha inválidos");
+    return;
   }
+
+  localStorage.setItem("usuariologado", JSON.stringify(usuarioEncontrado));
+
+  window.location.href = "./home.html";
 }
 
-const botaoLogin = document.querySelector("#botaoLogin");
-document.addEventListener("submit", logar);
+form.addEventListener("submit", logar);
